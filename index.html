@@ -1,76 +1,83 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Panel Administrador</title>
-  <link rel="stylesheet" href="estilos.css" />
+  <meta charset="UTF-8">
+  <title>Contáctanos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1E3A5F; /* Dark Blue */
+      color: #FFFFFF; /* White */
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 50px auto;
+      background-color: #FFFFFF; /* White */
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      color: #1E3A5F; /* Dark Blue */
+    }
+
+    h1 {
+      text-align: center;
+      color: #B22222; /* Firebrick Red */
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="file"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 2px solid #1E3A5F;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #B22222; /* Firebrick Red */
+      color: white;
+      padding: 10px 20px;
+      margin-top: 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: #a11c1c;
+    }
+  </style>
 </head>
 <body>
-  <div class="contenido">
-    <header class="top-bar">
-      <div class="logo">Logo</div>
-      <nav class="nav-buttons">
-        <button onclick="verPublicaciones()">📄 Publicaciones</button>
-        <button onclick="irAPublicar()">✏️ Publicar</button>
-      </nav>
-    </header>
+  <div class="container">
+    <h1>Contáctanos</h1>
+    <form>
+      <label for="usuario">Usuario:</label>
+      <input type="text" id="usuario" name="usuario" required>
 
-    <main class="container" id="publicar">
-      <form class="formulario">
-        <div class="campo">
-          <label for="tema">Tema:</label>
-          <input type="text" id="tema" name="tema" required />
-          <div class="subir-archivo">
-            <label for="archivo" class="btn-subir">📤</label>
-            <input type="file" id="archivo" name="archivo" hidden onchange="mostrarNombreArchivo()" />
-          </div>
-        </div>
-        <div id="nombre-archivo" class="nombre-archivo"></div>
+      <label for="contrasena">Contraseña:</label>
+      <input type="password" id="contrasena" name="contrasena" required>
 
-        <div class="campo">
-          <label for="descripcion">Descripción:</label>
-          <textarea id="descripcion" name="descripcion" rows="3" required></textarea>
-        </div>
+      <label for="direccion">Dirección:</label>
+      <textarea id="direccion" name="direccion" rows="3" required></textarea>
 
-        <div class="campo">
-          <label for="nota">Nota:</label>
-          <input type="text" id="nota" name="nota" required />
-        </div>
+      <label for="imagen">Sube una imagen:</label>
+      <input type="file" id="imagen" name="imagen" accept="image/*">
 
-        <div class="boton-publicar">
-          <button type="submit">✅ Publicar</button>
-        </div>
-      </form>
-    </main>
-
-    <section class="container" id="publicaciones" style="display: none;">
-      <h2>📄 Publicaciones Subidas</h2>
-      <p>Aquí se mostrarán las publicaciones subidas.</p>
-    </section>
+      <button type="submit">Enviar</button>
+    </form>
   </div>
-
-  <footer>
-    <hr />
-    <p>Pie de página correctamente mueve</p>
-  </footer>
-
-  <script>
-    function mostrarNombreArchivo() {
-      const input = document.getElementById('archivo');
-      const nombre = input.files.length > 0 ? input.files[0].name : '';
-      document.getElementById('nombre-archivo').textContent = nombre;
-    }
-
-    function verPublicaciones() {
-      document.getElementById('publicar').style.display = 'none';
-      document.getElementById('publicaciones').style.display = 'block';
-    }
-
-    function irAPublicar() {
-      document.getElementById('publicar').style.display = 'block';
-      document.getElementById('publicaciones').style.display = 'none';
-    }
-  </script>
 </body>
 </html>

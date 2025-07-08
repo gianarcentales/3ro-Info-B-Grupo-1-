@@ -1,0 +1,159 @@
+/* -------------------- */
+/* ENCABEZADO COMPLETO */
+/* -------------------- */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  height: var(--header-height);
+  background-color: var(--dark-blue);
+  background-color: #1E3A5F; /* Azul oscuro */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  font-family: Arial, sans-serif;
+}
+
+/* Logo */
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Subrayado animado */
+.menu li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  left: 0;
+  bottom: 0;
+  background-color: var(--firebrick-red);
+  transition: width 0.3s ease;
+}
+
+/* Hover y activo */
+.menu li a:hover {
+  color: var(--firebrick-red);
+}
+
+.menu li a:hover::after,
+.menu li a.active::after {
+  width: 100%;
+}
+
+.menu li a.active {
+  color: var(--firebrick-red);
+}
+
+/* Botones de navegación debajo del header */
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  gap: var(--gap);
+  margin-top: 10px;
+  margin-bottom: 2rem;
+}
+
+.nav-btn {
+  background-color: var(--dark-blue);
+  color: var(--white);
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.nav-btn:hover {
+  background-color: var(--firebrick-red);
+}
+
+/* --------------------- */
+/* FORMULARIO DE LOGIN */
+/* --------------------- */
+
+.form.login {
+  width: 400px;
+  background: #FFFFFF; /* Fondo del formulario en blanco */
+  margin: auto;
+  margin-top: 150px;
+  box-shadow: 7px 13px 37px #000;
+  padding: 20px 30px;
+  border-top: 4px solid #B22222; /* Borde superior en rojo firebrick */
+  color: #1E3A5F; /* Texto en azul oscuro */
+  text-align: center; /* Centra todo el contenido del formulario */
+}
+
+.form.login .title {
+  text-align: center;
+  height: 40px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #B22222;
+  font-size: 20px;
+  color: #1E3A5F;
+}
+
+/* Campos de entrada */
+.form.login input[type="email"],
+.form.login input[type="password"] {
+  width: 100%; /* Ocupa toda la anchura del formulario */
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #1E3A5F;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+/* Botón de ingreso */
+.form.login button[type="submit"] {
+  width: 100%; /* Ocupa toda la anchura del formulario */
+  padding: 10px;
+  background-color: #B22222;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.form.login button[type="submit"]:hover {
+  background-color: #a11c1c;
+}
+
+/* Enlace de olvido de contraseña */
+.form.login p {
+  margin-top: 15px;
+  text-align: center;
+  color: #B22222;
+}
+
+.form.login a {
+  color: #B22222;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.form.login a:hover {
+  text-decoration: underline;
+}
+
+/* -------------------- */
+/* PIE DE PÁGINA */
+/* -------------------- */
+
+.main-footer {
+  background-color: #1E3A5F; /* Azul oscuro */
+  color: white;
+  text-align: center;
+  padding: 15px 20px;
+  font-size: 14px;
+  position: fixed; /* Cambia a fixed si quieres que se quede abajo siempre */
+  bottom: 0;
+  width: 100%;
+}

@@ -1,0 +1,214 @@
+:root {
+  --azul-header: #1f3b63;
+  --rojo-hover: #B22222;
+  --gris-texto: #b9b9b9;
+  --fondo-claro: #f2f2f2;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: var(--fondo-claro);
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  background-color: var(--azul-header);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  height: 50px;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+nav {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li a,
+.menu li a i {
+  color: var(--gris-texto);
+  transition: color 0.3s ease;
+}
+
+.menu li a {
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 12px;
+  position: relative;
+  border-radius: 6px;
+}
+
+.menu li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  left: 0;
+  bottom: 0;
+  background-color: var(--rojo-hover);
+  transition: width 0.3s ease;
+}
+
+.menu li a:hover,
+.menu li a:hover i {
+  color: var(--rojo-hover);
+}
+
+.menu li a:hover::after,
+.menu li a.active::after {
+  width: 100%;
+}
+
+.menu li a.active {
+  color: var(--rojo-hover);
+}
+
+main {
+  padding: 60px 20px 20px;
+}
+
+.titulo-menu {
+  margin-bottom: 20px;
+  text-align: center;
+  color: var(--azul-header);
+}
+
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: row; /* ← contenido e imagen en fila */
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 15px;
+  
+}
+
+.menu-item:hover {
+  background-color: #e8f0fe;
+}
+
+.contenido-oculto {
+  flex: 1;
+  color: #444;
+  text-align: left;
+  padding-right: 15px;
+}
+
+.contenido-oculto h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+  color: #1f3b63;
+}
+
+.menu-item img {
+  width: 120px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-left: 15px; /* separa la imagen del texto */
+}
+
+
+.contenido-oculto {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+  color: #444;
+}
+
+.contenido-oculto.mostrar {
+  max-height: 200px;
+  margin-top: 10px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #1f3b63;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  z-index: 1000;
+}
+
+
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 10px;
+  margin-bottom: 2rem;
+}
+
+.nav-btn {
+  background-color: var(--azul-header);
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.nav-btn:hover {
+  background-color: var(--rojo-hover);
+}
+
+
+.contenido-oculto {
+  flex: 1; /* ocupa el espacio disponible */
+  max-height: none; /* muestra todo siempre */
+  margin-top: 0; /* quitar margen si tenía */
+  margin-right: 800px; /* separa del lado derecho (de la imagen) */
+  margin-top: 20px;
+  color: #444;
+}
+
+.menu-item img {
+  width: 120px;
+  height: 100px;
+  object-fit: cover;
+  margin-right: 10px;
+  border-radius: 8px;
+  
+}
